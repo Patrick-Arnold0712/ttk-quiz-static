@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#12805c">
+  <title>题题的库 · 共享题库</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <div class="top-inner">
+    <div class="brand"><span class="logo">题</span><span>题题的库</span><em>共享题库</em></div>
+    <select id="subject" aria-label="选择学科"></select>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="hero">
+    <div>
+      <h1 id="title">正在加载</h1>
+      <p id="desc" class="muted">题目和解析来自本机题库的公开副本</p>
+    </div>
+    <div class="stats" id="stats"></div>
+  </section>
+
+  <section class="controls">
+    <select id="chapter" aria-label="选择单元"></select>
+    <select id="kp" aria-label="选择考点"></select>
+    <input id="search" type="search" placeholder="搜题干关键词">
+    <button id="random" class="btn ghost">随机一题</button>
+    <button id="wrongOnly" class="btn ghost">只看错题</button>
+  </section>
+
+  <div id="empty" class="card empty" hidden>这个筛选下没有题目。</div>
+
+  <section id="card" class="card" hidden>
+    <div class="meta">
+      <span class="pill" id="position"></span>
+      <span class="pill" id="qtype"></span>
+      <span class="pill" id="lesson"></span>
+      <span class="pill" id="kpname"></span>
+      <span class="pill source" id="source"></span>
+    </div>
+    <div id="stem" class="stem"></div>
+    <div id="fillWrap" class="fill" hidden><input id="fill" type="text" placeholder="输入答案" autocomplete="off"></div>
+    <div id="options" class="options"></div>
+    <div class="toolbar">
+      <button id="prev" class="btn ghost">上一题</button>
+      <button id="submit" class="btn">提交</button>
+      <button id="reveal" class="btn ghost">看答案</button>
+      <button id="next" class="btn ghost">下一题</button>
+    </div>
+    <div id="feedback" class="feedback" hidden></div>
+    <div id="explain" class="explain" hidden></div>
+  </section>
+
+  <footer>
+    <span class="muted">进度只保存在当前浏览器，不需要登录；换设备就是新的进度。</span>
+    <button id="reset" class="link">清空本机进度</button>
+  </footer>
+</main>
+<script src="app.js"></script>
+</body>
+</html>
